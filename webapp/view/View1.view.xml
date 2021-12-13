@@ -1,0 +1,66 @@
+<mvc:View controllerName="zuserdetails.controller.View1" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<App id="idAppControl">
+		<pages>
+			<Page showHeader="false" showFooter="false">
+				<content>
+					<l:VerticalLayout width="100%" id="__layout0">
+						<l:content>
+							<ObjectHeader title="{/context/task/Title}" titleActive="false" id="__header0">
+								<attributes>
+									<ObjectAttribute title="{i18n>createdOn}" text="{/context/task/CreatedOn}"/>
+								</attributes>
+								<statuses>
+									<ObjectStatus text="{/context/task/Status}" state="None"/>
+									<ObjectStatus text="{/context/task/Priority}" state="{/context/task/PriorityState}"/>
+								</statuses>
+							</ObjectHeader>
+							<l:HorizontalLayout id="__layout1">
+								<l:content>
+									<IconTabBar selectedKey="__filter0" id="__bar0">
+										<items>
+											<IconTabFilter icon="sap-icon://hint" id="__filter0">
+												<content>
+													<l:HorizontalLayout id="hLayout11">
+														<FlexBox width="100%" id="__box0">
+															<items>
+																<l:VerticalLayout id="hLayout12">
+																	<HBox width="100%" id="__hbox0">
+																		<l:HorizontalLayout id="hLayoutJob1">
+																			<f:Form>
+																				<f:layout>
+																					<f:GridLayout singleColumn="true"/>
+																				</f:layout>
+																				<f:FormContainer expanded="true" title="{i18n>persInfo}" expandable="false">
+																					<f:formElements>
+																						<f:FormElement label="First name">
+																							<Text text="{/context/userData/firstname}"/>
+																						</f:FormElement>
+																						<f:FormElement label="Last name">
+																							<Text text="{/context/userData/lastname}"/>
+																						</f:FormElement>
+																						<f:FormElement label="Email ID">
+																							<Text text="{/context/userData/email}" id="email"/>
+																						</f:FormElement>
+																					</f:formElements>
+																				</f:FormContainer>
+																			</f:Form>
+																		</l:HorizontalLayout>
+																	</HBox>
+																</l:VerticalLayout>
+															</items>
+														</FlexBox>
+													</l:HorizontalLayout>
+												</content>
+											</IconTabFilter>
+											<IconTabFilter icon="sap-icon://employee-lookup" id="__filter1" visible="false"/>
+										</items>
+									</IconTabBar>
+								</l:content>
+							</l:HorizontalLayout>
+						</l:content>
+					</l:VerticalLayout>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
